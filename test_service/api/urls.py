@@ -19,8 +19,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('users/', get_users, name='get_users'),
-    path('users/post', post_user, name='post_user'),
-    path('users/<int:pk>', user_detail, name='user_detail'),
+    path('users/post/', post_user, name='post_user'),
+    path('users/<int:pk>/', user_detail, name='user_detail'),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
